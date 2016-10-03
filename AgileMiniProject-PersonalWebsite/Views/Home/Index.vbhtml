@@ -11,7 +11,7 @@ End Code
 
 <h2>@ViewData("Title")</h2>
 <h3>@ViewData("Message")</h3>
-
+<p>@ViewData("Content")</p>
 
 @*Scripts*@
 <script>

@@ -41,7 +41,12 @@
             </div>
         </div>
         <div class="container body-content">
-            @RenderBody()
+            <section id="side">
+
+            </section>
+            <section id="main">
+                @RenderBody()
+            </section>
             <hr />
             <footer class="text-center">
                 <p>&copy; @DateTime.Now.Year - User.Name</p>

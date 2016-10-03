@@ -19,7 +19,8 @@ Public Class HomeController
     Function Index() As ActionResult
 
         ViewBag.Title = "Index/About"
-        ViewBag.Message = "Index/About info here..."
+        ViewBag.Message = "Index/About info here.."
+        ViewBag.Content = "More content goes here "
 
         Return View()
 

@@ -39,3 +39,20 @@ textarea {
     margin-right: 25px;
 }
 
+#side {
+    border: 1px solid #000;
+    width: 400px;
+    height: 800px;
+    float: left;
+    margin: 5px;
+
+}
+
+#main {
+    border: 1px solid #000;
+    margin: 5px;
+    position: relative;
+    left: 410px;
+    width: 800px;
+    height: 800px;
+}

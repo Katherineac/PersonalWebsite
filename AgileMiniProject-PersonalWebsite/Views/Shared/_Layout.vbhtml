@@ -42,7 +42,12 @@
         </div>
         <div class="container body-content">
             <section id="side">
-
+                <p>Name: John Smith</p>
+                <img />
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Github</a>
             </section>
             <section id="main">
                 @RenderBody()

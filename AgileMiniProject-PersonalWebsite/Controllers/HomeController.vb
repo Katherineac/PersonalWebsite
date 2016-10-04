@@ -35,6 +35,10 @@ Public Class HomeController
 
         ViewBag.Title = "Resume"
         ViewBag.Message = "Resume info goes here..."
+        ViewBag.WorkHistory = "Work History goes here"
+        ViewBag.Education = "Education information goes here"
+        ViewBag.Skills = "Skills information goes here"
+        ViewBag.VolunteerWork = "Volunteer experience goes here"
 
         Return View()
 

@@ -20,7 +20,12 @@ Public Class HomeController
 
         ViewBag.Title = "Index/About"
         ViewBag.Message = "Index/About info here.."
-        ViewBag.Content = "More content goes here "
+        ViewBag.Content = "This has been designed as a portfolio template."
+        ViewBag.Content2 = "This is not a real person."
+        ViewBag.Content3 = "My name is John Smith and I graduated from CVTC in 2014 with an associates in Software Development."
+        ViewBag.Content4 = "I am currently pursuing a career in software development in the Eau Claire Area."
+        ViewBag.Content5 = "Please look at the rest of my site for my experience, projects I've worked on, and how to contact me."
+        ViewBag.Content6 = "Thank you for visiting, have a great day."
 
         Return View()
 

@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="container body-content">
-            <section id="side">
+            <section id="col-lg-4">
                 <p>Name: John Smith</p>
                 <img />
                 <a href="#">Facebook</a>
@@ -49,7 +49,7 @@
                 <a href="#">LinkedIn</a>
                 <a href="#">Github</a>
             </section>
-            <section id="main">
+            <section id="col-lg-8">
                 @RenderBody()
             </section>
             <hr />

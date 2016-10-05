@@ -5,72 +5,106 @@
 
 Imports System
 Imports AgileMiniProject_PersonalWebsite
-Imports Autofac
+Imports Microsoft.Ajax.Utilities
+Namespace PersonalWebsite
 
-Public Class HomeController
-    Inherits Controller
 
-    Private _service As IService
+    Public Class HomeController
+        Inherits Controller
 
-    Public Sub New()
+        Private _service As IService
 
-    End Sub
+        Public Sub New()
 
-    Function Index() As ActionResult
+        End Sub
 
-        ViewBag.Title = "Index/About"
-        ViewBag.Message = "Index/About info here.."
-        ViewBag.Content = "This has been designed as a portfolio template."
-        ViewBag.Content2 = "This is not a real person."
-        ViewBag.Content3 = "My name is John Smith and I graduated from CVTC in 2014 with an associates in Software Development."
-        ViewBag.Content4 = "I am currently pursuing a career in software development in the Eau Claire Area."
-        ViewBag.Content5 = "Please look at the rest of my site for my experience, projects I've worked on, and how to contact me."
-        ViewBag.Content6 = "Thank you for visiting, have a great day."
+        Function Index() As ActionResult
 
-        Return View()
+            ViewBag.Title = "Index/About"
+            ViewBag.Message = "Index/About info here.."
+            ViewBag.Content = "This has been designed as a portfolio template."
+            ViewBag.Content2 = "This is not a real person."
+            ViewBag.Content3 = "My name is John Smith and I graduated from CVTC in 2014 with an associates in Software Development."
+            ViewBag.Content4 = "I am currently pursuing a career in software development in the Eau Claire Area."
+            ViewBag.Content5 = "Please look at the rest of my site for my experience, projects I've worked on, and how to contact me."
+            ViewBag.Content6 = "Thank you for visiting, have a great day."
 
-    End Function
+            Return View()
 
-    Function ResumePage() As ActionResult
+        End Function
 
-        ViewBag.Title = "Resume"
-        ViewBag.Message = "Resume info goes here..."
-        ViewBag.WorkHistory = "Work History goes here"
-        ViewBag.Education = "Education information goes here"
-        ViewBag.Skills = "Skills information goes here"
-        ViewBag.VolunteerWork = "Volunteer experience goes here"
+        Function ResumePage() As ActionResult
 
-        Return View()
+            Dim rvm As ResumeViewModel = New ResumeViewModel()
 
-    End Function
+            Using db As ApplicationDbContext = New ApplicationDbContext
 
-    Function Projects() As ActionResult
+                rvm.styleSheet = db.Style.Where(Function(x) x.Active.Equals(True)).FirstOrDefault()
 
-        ViewBag.Title = "Projects"
-        ViewBag.Message = "Projects goes here..."
+                rvm.userInfo = db.UserInfo.FirstOrDefault()
 
-        Return View()
+                Dim experienceList As New List(Of Experience)
+                experienceList = db.Experience.OrderByDescending(Function(e) e.CompanyEndDate).ToList()
 
-    End Function
+                For Each experience As Experience In experienceList
+                    rvm.experience.Add(experience)
+                Next
 
-    Function Contact() As ActionResult
+                Dim educationList As New List(Of Education)
+                educationList = db.Education.OrderByDescending(Function(e) e.DegreeYear).ToList()
 
-        ViewBag.Title = "Contact"
-        ViewBag.Message = "Contact form goes here..."
+                For Each education As Education In educationList
+                    rvm.education.Add(education)
+                Next
 
-        Return View()
+                Dim skillList As New List(Of Skill)
+                skillList = db.Skill.OrderBy(Function(e) e.SkillType).ToList()
 
-    End Function
+                For Each skill As Skill In skillList
+                    rvm.skill.Add(skill)
+                Next
 
-    Function Admin() As ActionResult
+            End Using
 
-        _service = New Service()
+            ViewBag.Title = "Resume"
+            ViewBag.Message = "Resume info goes here..."
+            ViewBag.Experience = "Experience"
+            ViewBag.Education = "Education"
+            ViewBag.Skills = "Skills"
+            ViewBag.VolunteerExperience = "Volunteer Experience"
 
-        ViewBag.Title = _service.AdminTitleExample()
-        ViewBag.Message = _service.AdminMessageExample()
+            Return View(rvm)
 
-        Return View()
+        End Function
 
-    End Function
+        Function Projects() As ActionResult
 
-End Class
+            ViewBag.Title = "Projects"
+            ViewBag.Message = "Projects goes here..."
+
+            Return View()
+
+        End Function
+
+        Function Contact() As ActionResult
+
+            ViewBag.Title = "Contact"
+            ViewBag.Message = "Contact form goes here..."
+
+            Return View()
+
+        End Function
+
+        Function Admin() As ActionResult
+
+            _service = New Service()
+
+            ViewBag.Title = _service.AdminTitleExample()
+            ViewBag.Message = _service.AdminMessageExample()
+
+            Return View()
+
+        End Function
+
+    End Class
+End Namespace

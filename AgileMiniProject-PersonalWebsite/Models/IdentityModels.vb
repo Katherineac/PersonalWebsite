@@ -24,4 +24,12 @@ Public Class ApplicationDbContext
     Public Shared Function Create() As ApplicationDbContext
         Return New ApplicationDbContext()
     End Function
+
+    Public Property Education As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.Education)
+    Public Property Experience As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.Experience)
+    Public Property Project As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.Project)
+    Public Property Skill As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.Skill)
+    Public Property Style As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.Style)
+    Public Property UserInfo As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.UserInfo)
+
 End Class

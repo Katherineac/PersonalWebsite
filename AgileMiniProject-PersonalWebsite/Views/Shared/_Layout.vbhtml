@@ -11,7 +11,9 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@ViewBag.Title</title>
-        @Styles.Render("~/Content/css")
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
@@ -26,7 +28,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    @*<h3 class="nav-title">User.Name</h3>*@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -34,28 +35,16 @@
                         <li id="resume">@Html.ActionLink("Resume", "ResumePage", "Home")</li>
                         <li id="projects">@Html.ActionLink("Projects", "Projects", "Home")</li>
                         <li id="contact">@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li id="admin">@Html.ActionLink("Admin", "Admin", "Home")</li>
+                        @If Request.IsAuthenticated Then
+                        @<li id = "admin" >@Html.ActionLink("Admin", "Admin", "Home")</li>
+                        End If
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
             </div>
         </div>
         <div class="container body-content">
-            <section id="col-lg-4">
-                <p>Name: John Smith</p>
-                <img />
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Github</a>
-            </section>
-            <section id="col-lg-8">
-                @RenderBody()
-            </section>
-            <hr />
-            <footer class="text-center">
-                <p>&copy; @DateTime.Now.Year - User.Name</p>
-            </footer>
+            @RenderBody()
         </div>
     </body>
 </html>

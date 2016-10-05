@@ -29,4 +29,17 @@ Imports System.Web.Mvc
         ' Assert
         Assert.IsNotNull(result)
     End Sub
+
+    <TestMethod()> Public Sub SubmitContact()
+        ' Arrange
+        Dim controller As New HomeController()
+
+        ' Act
+        Dim postResult As ViewResult = DirectCast(controller.ContactSubmit("testName"), ViewResult)
+
+        ' Assert
+        Assert.AreEqual(postResult.ViewBag.Message, "Name: testName")
+
+
+    End Sub
 End Class

@@ -319,6 +319,7 @@
     <Content Include="Views\Home\Admin.vbhtml" />
     <Content Include="Views\Home\Projects.vbhtml" />
     <Content Include="Views\Home\ResumePage.vbhtml" />
+    <Content Include="Views\Home\ContactSubmit.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

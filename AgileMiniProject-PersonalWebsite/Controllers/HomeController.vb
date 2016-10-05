@@ -4,6 +4,7 @@
 'Katie Cater, Lucas Lokken, Austing Prueher, Pheng Vang
 
 Imports System
+Imports System.Threading.Tasks
 Imports AgileMiniProject_PersonalWebsite
 Imports Autofac
 
@@ -55,11 +56,21 @@ Public Class HomeController
 
     Function Contact() As ActionResult
 
+
         ViewBag.Title = "Contact"
         ViewBag.Message = "Contact form goes here..."
 
         Return View()
 
+    End Function
+
+    '
+    ' POST: /ContactSubmit
+    <HttpPost>
+    <AllowAnonymous>
+    Public Function ContactSubmit(name As String) As ActionResult
+        ViewBag.Message = "Name: " + name
+        Return View()
     End Function
 
     Function Admin() As ActionResult

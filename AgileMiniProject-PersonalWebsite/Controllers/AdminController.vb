@@ -1,4 +1,5 @@
-﻿Imports System.Activities.Expressions
+﻿Imports System
+Imports System.Activities.Expressions
 Imports System.Collections
 Imports System.IO
 Imports System.Web.Mvc
@@ -23,8 +24,7 @@ Namespace PersonalWebsite
 
             _service = New Service()
 
-            ViewBag.Title = _service.AdminTitleExample()
-            ViewBag.Message = _service.AdminMessageExample()
+            ViewBag.Title = "Admin"
 
             Return View(avm)
 
@@ -70,12 +70,40 @@ Namespace PersonalWebsite
                 End If
 
             Catch Dex As DataException
-                'Log the error (uncomment dex variable name and add a line here to write a log.
+
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.")
+
             End Try
 
 
             Return RedirectToAction("Admin")
+        End Function
+
+        <HttpPost()>
+        Function UpdateUserInfo(ByVal form As UserInfo) As ActionResult
+
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                Dim dbUserInfo As UserInfo = db.UserInfo.FirstOrDefault()
+
+                dbUserInfo.Name = form.Name
+                dbUserInfo.Address = form.Address
+                dbUserInfo.City = form.City
+                dbUserInfo.State = form.State
+                dbUserInfo.Zip = form.Zip
+                dbUserInfo.Phone = form.Phone
+                dbUserInfo.Email = form.Email
+                dbUserInfo.GitHub = form.GitHub
+                dbUserInfo.Twitter = form.Twitter
+                dbUserInfo.Facebook = form.Facebook
+                dbUserInfo.LinkedIn = form.LinkedIn
+
+                db.SaveChanges()
+
+            End Using
+
+            Return RedirectToAction("Admin")
+
         End Function
 
         Function GetImage() As FileResult

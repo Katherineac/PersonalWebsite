@@ -12,10 +12,13 @@ Public Class ResumeViewModel
 
     Public skill As IList(Of Skill)
 
+    Public volunteer As IList(Of Volunteer)
+
     Sub New()
         Me.experience = New List(Of Experience)
         Me.education = New List(Of Education)
         Me.skill = New List(Of Skill)
+        Me.volunteer = New List(Of Volunteer)
     End Sub
 
 End Class

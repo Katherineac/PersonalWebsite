@@ -21,6 +21,16 @@ Namespace PersonalWebsite
 
         Function Index() As ActionResult
 
+            Dim avm As AboutViewModel = New AboutViewModel()
+
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                avm.styleSheet = db.Style.Where(Function(x) x.Active.Equals(True)).FirstOrDefault()
+
+                avm.userInfo = db.UserInfo.FirstOrDefault()
+
+            End Using
+
             ViewBag.Title = "Index/About"
             ViewBag.Message = "Index/About info here.."
             ViewBag.Content = "This has been designed as a portfolio template."
@@ -30,7 +40,7 @@ Namespace PersonalWebsite
             ViewBag.Content5 = "Please look at the rest of my site for my experience, projects I've worked on, and how to contact me."
             ViewBag.Content6 = "Thank you for visiting, have a great day."
 
-            Return View()
+            Return View(avm)
 
         End Function
 
@@ -65,6 +75,13 @@ Namespace PersonalWebsite
                     rvm.skill.Add(skill)
                 Next
 
+                Dim volunteerList As New List(Of Volunteer)
+                volunteerList = db.Volunteer.OrderBy(Function(e) e.EndDate).ToList()
+
+                For Each volunteer As Volunteer In volunteerList
+                    rvm.volunteer.Add(volunteer)
+                Next
+
             End Using
 
             ViewBag.Title = "Resume"
@@ -80,19 +97,39 @@ Namespace PersonalWebsite
 
         Function Projects() As ActionResult
 
+            Dim pvm As ProjectsViewModel = New ProjectsViewModel()
+
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                pvm.styleSheet = db.Style.Where(Function(x) x.Active.Equals(True)).FirstOrDefault()
+
+                pvm.userInfo = db.UserInfo.FirstOrDefault()
+
+            End Using
+
             ViewBag.Title = "Projects"
             ViewBag.Message = "Projects goes here..."
 
-            Return View()
+            Return View(pvm)
 
         End Function
 
         Function Contact() As ActionResult
 
+            Dim cvm As ContactViewModel = New ContactViewModel()
+
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                cvm.styleSheet = db.Style.Where(Function(x) x.Active.Equals(True)).FirstOrDefault()
+
+                cvm.userInfo = db.UserInfo.FirstOrDefault()
+
+            End Using
+
             ViewBag.Title = "Contact"
             ViewBag.Message = "Contact form goes here..."
 
-            Return View()
+            Return View(cvm)
 
         End Function
         
@@ -107,12 +144,22 @@ Namespace PersonalWebsite
 
         Function Admin() As ActionResult
 
+            Dim avm As AdminViewModel = New AdminViewModel()
+
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                avm.styleSheet = db.Style.Where(Function(x) x.Active.Equals(True)).FirstOrDefault()
+
+                avm.userInfo = db.UserInfo.FirstOrDefault()
+
+            End Using
+
             _service = New Service()
 
             ViewBag.Title = _service.AdminTitleExample()
             ViewBag.Message = _service.AdminMessageExample()
 
-            Return View()
+            Return View(avm)
 
         End Function
 

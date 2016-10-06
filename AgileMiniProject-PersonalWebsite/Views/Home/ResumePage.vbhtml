@@ -54,9 +54,16 @@ End Code
             <br />
             <div>
                 <h3>@ViewData("VolunteerExperience")</h3>
+                <ul>
+                    @For Each volunteer In Model.volunteer
+                        @<li>@volunteer.OrganizationName @volunteer.OrganizationCity, @volunteer.OrganizationState - @volunteer.StartDate - @volunteer.EndDate</li>
+                    Next
+                </ul>
             </div>
         </div>
     </div>
+</div>
+<div class="col-lg-12">
     <hr />
     <footer class="footer text-center">
         <p>&copy; @DateTime.Now.Year - @Model.userInfo.Name</p>

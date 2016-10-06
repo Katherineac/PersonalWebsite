@@ -4,6 +4,7 @@
 'Katie Cater, Lucas Lokken, Austing Prueher, Pheng Vang
 
 Imports System
+Imports System.Threading.Tasks
 Imports AgileMiniProject_PersonalWebsite
 Imports Microsoft.Ajax.Utilities
 Namespace PersonalWebsite
@@ -93,6 +94,15 @@ Namespace PersonalWebsite
 
             Return View()
 
+        End Function
+        
+        '
+        ' POST: /ContactSubmit
+        <HttpPost>
+        <AllowAnonymous>
+        Public Function ContactSubmit(name As String) As ActionResult
+            ViewBag.Message = "Name: " + name
+            Return View()
         End Function
 
         Function Admin() As ActionResult

@@ -28,8 +28,21 @@ Namespace PersonalWebsite
             ' Act
             Dim result As ViewResult = DirectCast(controller.Contact(), ViewResult)
 
-            ' Assert
-            Assert.IsNotNull(result)
-        End Sub
-    End Class
+        ' Assert
+        Assert.IsNotNull(result)
+    End Sub
+
+    <TestMethod()> Public Sub SubmitContact()
+        ' Arrange
+        Dim controller As New HomeController()
+
+        ' Act
+        Dim postResult As ViewResult = DirectCast(controller.ContactSubmit("testName"), ViewResult)
+
+        ' Assert
+        Assert.AreEqual(postResult.ViewBag.Message, "Name: testName")
+
+
+    End Sub
+End Class
 End Namespace

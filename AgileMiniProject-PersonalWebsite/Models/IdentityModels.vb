@@ -31,6 +31,7 @@ Public Class ApplicationDbContext
     Public Property Skill As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.Skill)
     Public Property Style As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.Style)
     Public Property UserInfo As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.UserInfo)
+    Public Property Photo As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.Photo)
     Public Property Volunteer As System.Data.Entity.DbSet(Of AgileMiniProject_PersonalWebsite.PersonalWebsite.Volunteer)
 
 End Class

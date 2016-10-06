@@ -36,7 +36,7 @@
                         <li id="projects">@Html.ActionLink("Projects", "Projects", "Home")</li>
                         <li id="contact">@Html.ActionLink("Contact", "Contact", "Home")</li>
                         @If Request.IsAuthenticated Then
-                        @<li id = "admin" >@Html.ActionLink("Admin", "Admin", "Home")</li>
+                        @<li id = "admin" >@Html.ActionLink("Admin", "Admin", "Admin")</li>
                         End If
                     </ul>
                     @Html.Partial("_LoginPartial")

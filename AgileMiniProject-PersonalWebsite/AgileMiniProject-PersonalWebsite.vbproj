@@ -66,6 +66,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
@@ -204,15 +205,18 @@
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="Controllers\AccountController.vb" />
+    <Compile Include="Controllers\AdminController.vb" />
     <Compile Include="Controllers\ManageController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="Models\AccountViewModels.vb" />
     <Compile Include="Models\EducationModel.vb" />
     <Compile Include="Models\ExperienceModel.vb" />
     <Compile Include="Models\IdentityModels.vb" />
     <Compile Include="Models\ManageViewModels.vb" />
+    <Compile Include="Models\Photo.vb" />
     <Compile Include="Models\ProjectModel.vb" />
     <Compile Include="Models\SkillsModel.vb" />
     <Compile Include="Models\StylesModel.vb" />
@@ -278,7 +282,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Images\profile-pictures-14.jpg" />
+    <Content Include="Images\default-profile.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -314,7 +318,7 @@
     <Content Include="Views\Shared\Lockout.vbhtml" />
     <Content Include="Views\Shared\_LoginPartial.vbhtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Home\Admin.vbhtml" />
+    <Content Include="Views\Admin\Admin.vbhtml" />
     <Content Include="Views\Home\Projects.vbhtml" />
     <Content Include="Views\Home\ResumePage.vbhtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />

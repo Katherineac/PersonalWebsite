@@ -14,7 +14,7 @@ End Code
     <div class="panel-body col-lg-12">
         <section class="col-lg-4 sidebar">
             <p>@Model.userInfo.Name</p>
-            <img class="img-responsive" src="~/Images/profile-pictures-14.jpg" />
+            <img class="img-responsive" src="@Url.Action("GetImage", "Admin")" alt="Profile Photo" />
             <a href="mailto:@Model.userInfo.Email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
             <a href="@Model.userInfo.Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
             <a href="@Model.userInfo.Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>

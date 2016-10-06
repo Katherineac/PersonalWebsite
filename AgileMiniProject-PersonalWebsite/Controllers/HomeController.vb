@@ -3,7 +3,10 @@
 'Fall 2016
 'Katie Cater, Lucas Lokken, Austing Prueher, Pheng Vang
 
+Option Infer On
+
 Imports System
+Imports System.IO
 Imports System.Threading.Tasks
 Imports AgileMiniProject_PersonalWebsite
 Imports Microsoft.Ajax.Utilities
@@ -132,7 +135,7 @@ Namespace PersonalWebsite
             Return View(cvm)
 
         End Function
-        
+
         '
         ' POST: /ContactSubmit
         <HttpPost>

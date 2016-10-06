@@ -312,12 +312,9 @@
     <Content Include="Views\Home\Admin.vbhtml" />
     <Content Include="Views\Home\Projects.vbhtml" />
     <Content Include="Views\Home\ResumePage.vbhtml" />
-<<<<<<< HEAD
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
-=======
     <Content Include="Views\Home\ContactSubmit.vbhtml" />
->>>>>>> dev
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

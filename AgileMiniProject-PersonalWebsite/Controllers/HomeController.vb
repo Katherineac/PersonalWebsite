@@ -140,8 +140,9 @@ Namespace PersonalWebsite
         ' POST: /ContactSubmit
         <HttpPost>
         <AllowAnonymous>
-        Public Function ContactSubmit(name As String) As ActionResult
-            ViewBag.Message = "Name: " + name
+        Public Function ContactSubmit(name As String, email As String, message As String) As ActionResult
+            ViewBag.Title = "Contact Submitted"
+            ViewBag.Message = "Thank you " + name + ", your email address " + email + " has been forwarded to John Smith with the message: " + message
             Return View()
         End Function
 

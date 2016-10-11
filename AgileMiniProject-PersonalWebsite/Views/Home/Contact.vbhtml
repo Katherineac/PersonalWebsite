@@ -24,18 +24,18 @@ End Code
         <div class="col-lg-8" id="maincontent">
             <h2>@ViewData("Title")</h2>
             <h3>@ViewData("Message")</h3>
-            <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+            <form id="contact_form" action="ContactSubmit" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <label for="name">Your name:</label><br />
-                    <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+                    <input id="name" class="input" name="name" type="text" value="" size="30" required><br />
                 </div>
                 <div class="row">
                     <label for="email">Your email:</label><br />
-                    <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+                    <input id="email" class="input" name="email" type="email" value="" size="30" required><br />
                 </div>
                 <div class="row">
                     <label for="message">Your message:</label><br />
-                    <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+                    <textarea id="message" class="input" name="message" rows="7" cols="30" required></textarea><br />
                 </div>
                 <input id="submit_button" type="submit" value="Send email" />
             </form>

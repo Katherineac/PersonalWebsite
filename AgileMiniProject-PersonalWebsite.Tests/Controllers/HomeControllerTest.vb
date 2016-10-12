@@ -37,10 +37,10 @@ Namespace PersonalWebsite
             Dim controller As New HomeController()
 
             ' Act
-            Dim postResult As ViewResult = DirectCast(controller.ContactSubmit("testName", "testEmail", "testMessage"), ViewResult)
+            Dim postResult As ViewResult = DirectCast(controller.ContactSubmit("testName", "testEmail@test.com", "testMessage"), ViewResult)
 
             ' Assert
-            Assert.AreEqual(postResult.ViewBag.Message, "Name: testName")
+            Assert.AreEqual(postResult.ViewBag.Message, "Thank you " + "testName" + ", your email address " + "testEmail@test.com" + " has been forwarded to John Smith with the message: " + "testMessage")
 
 
         End Sub

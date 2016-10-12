@@ -32,15 +32,15 @@ Namespace PersonalWebsite
             Assert.IsNotNull(result)
         End Sub
 
-        <TestMethod()> Public Sub SubmitContact()
+        <TestMethod()> Public Sub ContactSubmit()
             ' Arrange
             Dim controller As New HomeController()
 
             ' Act
-            'Dim postResult As ViewResult = DirectCast(controller.ContactSubmit("testName"), ViewResult)
+            Dim postResult As ViewResult = DirectCast(controller.ContactSubmit("testName", "testEmail", "testMessage"), ViewResult)
 
             ' Assert
-            'Assert.AreEqual(postResult.ViewBag.Message, "Name: testName")
+            Assert.AreEqual(postResult.ViewBag.Message, "Name: testName")
 
 
         End Sub

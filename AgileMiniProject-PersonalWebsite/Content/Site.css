@@ -1,0 +1,45 @@
+﻿#StylesTables tr th {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#StylesTables tr td {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#ProfilePhotosTable tr th {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#ProfilePhotosTable tr td {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#ProfilePhotosTable img {
+
+    max-width: 50px;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.success {
+
+    color: green;
+}
+
+.error {
+
+    color: red;
+}
+
+

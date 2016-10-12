@@ -178,3 +178,4 @@ C:\Users\katherineac\Documents\GitHub\PersonalWebsite\AgileMiniProject-PersonalW
 C:\Users\katherineac\Documents\GitHub\PersonalWebsite\AgileMiniProject-PersonalWebsite\obj\Debug\AgileMiniProject-PersonalWebsite.dll
 C:\Users\katherineac\Documents\GitHub\PersonalWebsite\AgileMiniProject-PersonalWebsite\obj\Debug\AgileMiniProject-PersonalWebsite.xml
 C:\Users\katherineac\Documents\GitHub\PersonalWebsite\AgileMiniProject-PersonalWebsite\obj\Debug\AgileMiniProject-PersonalWebsite.pdb
+C:\Users\lokko\PersonalWebsite\AgileMiniProject-PersonalWebsite\bin\GridMvc.dll

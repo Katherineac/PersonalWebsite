@@ -152,7 +152,7 @@ Namespace PersonalWebsite
 
             Using db As ApplicationDbContext = New ApplicationDbContext
 
-                avm.styleSheet = db.Style.Where(Function(x) x.Active.Equals(True)).FirstOrDefault()
+                avm.styleSheets = db.Style.ToList()
 
                 avm.userInfo = db.UserInfo.FirstOrDefault()
 

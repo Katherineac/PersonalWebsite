@@ -14,6 +14,7 @@
         <link href="~/Content/bootstrap.css" rel="stylesheet" />
         <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="~/Content/Site.css" rel="stylesheet" />
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")

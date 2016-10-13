@@ -25,7 +25,7 @@ End Code
         <div class="col-lg-8 maincontentContainer">
             <section class="col-lg-12" id="maincontent">
                 <h2>@ViewData("Title")</h2>
-                <p>Thank you @ViewData("name") your email address @ViewData("email") has been forwarded to @Model.userInfo.Name with the message: @ViewData("message")</p>
+                <p>Thank you @ViewData("Name") your email address @ViewData("Email") has been forwarded to @Model.userInfo.Name with the message: @ViewData("EmailMessage")</p>
             </section>
         </div>
         <div class="col-lg-12">

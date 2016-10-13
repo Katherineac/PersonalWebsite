@@ -130,6 +130,7 @@ Namespace PersonalWebsite
             End Using
 
             ViewBag.Title = "Contact"
+            ViewBag.Message = "Contact form goes here..."
 
             Return View(cvm)
 
@@ -152,11 +153,11 @@ Namespace PersonalWebsite
             End Using
             '
             ' POST: /ContactSubmit
-
             ViewBag.Title = "Contact Submitted"
-            ViewBag.name = name
-            ViewBag.email = email
-            ViewBag.message = message
+            ViewBag.Name = name
+            ViewBag.Email = email
+            ViewBag.EmailMessage = message
+
             Return View(csv)
 
         End Function

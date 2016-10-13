@@ -26,7 +26,6 @@ End Code
         <div class="col-lg-8 maincontentContainer">
             <div class="col-lg-12" id="maincontent">
                 <h2>@ViewData("Title")</h2>
-                <h3>@ViewData("Message")</h3>
                 <form id="contact_form" action="ContactSubmit" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <label for="name">Your name:</label><br />

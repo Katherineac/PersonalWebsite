@@ -26,7 +26,6 @@ Namespace PersonalWebsite
             Dim controller As New HomeController()
 
             ' Act
-            ' Act
             Dim result As ViewDataDictionary = controller.ViewData
 
             ' Assert
@@ -39,10 +38,10 @@ Namespace PersonalWebsite
             Dim controller As New HomeController()
 
             ' Act
-            Dim result As ViewDataDictionary = controller.ViewData
+            Dim postResult As ViewDataDictionary = controller.ViewData
 
             ' Assert
-            Assert.IsNotNull(result)
+            Assert.IsNotNull(postResult)
 
         End Sub
 

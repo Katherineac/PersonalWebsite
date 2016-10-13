@@ -26,7 +26,6 @@ End Code
         <div class="col-lg-8 maincontentContainer">
             <div class="col-lg-12" id="maincontent">
                 <h2>@ViewData("Title")</h2>
-                <h3>@ViewData("Message")</h3>
             </div>
         </div>
     </div>

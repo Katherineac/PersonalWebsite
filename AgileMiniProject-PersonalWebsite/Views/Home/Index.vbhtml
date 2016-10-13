@@ -26,9 +26,6 @@ End Code
         <div class="col-lg-8 maincontentContainer">
             <section class="col-lg-12" id="maincontent">
                 <h2>@ViewData("Title")</h2>
-                <h3>@ViewData("Message")</h3>
-                <p>@ViewData("Content")</p>
-                <p>@ViewData("Content2")</p>
                 <p>@ViewData("Content3")</p>
                 <p>@ViewData("Content4")</p>
                 <p>@ViewData("Content5")</p>

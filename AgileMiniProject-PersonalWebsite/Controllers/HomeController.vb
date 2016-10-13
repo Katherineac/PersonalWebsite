@@ -12,7 +12,6 @@ Imports AgileMiniProject_PersonalWebsite
 Imports Microsoft.Ajax.Utilities
 Namespace PersonalWebsite
 
-
     Public Class HomeController
         Inherits Controller
 
@@ -34,10 +33,7 @@ Namespace PersonalWebsite
 
             End Using
 
-            ViewBag.Title = "Index/About"
-            ViewBag.Message = "Index/About info here.."
-            ViewBag.Content = "This has been designed as a portfolio template."
-            ViewBag.Content2 = "This is not a real person."
+            ViewBag.Title = "About Me"
             ViewBag.Content3 = "My name is John Smithson and I graduated from CVTC in 2016 with an associates in Mobile Development."
             ViewBag.Content4 = "I am currently pursuing a career in software development in the Eau Claire Area."
             ViewBag.Content5 = "Please look at the rest of my site for my experience, projects I've worked on, and how to contact me."

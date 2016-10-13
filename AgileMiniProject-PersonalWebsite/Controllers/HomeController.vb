@@ -130,7 +130,6 @@ Namespace PersonalWebsite
             End Using
 
             ViewBag.Title = "Contact"
-            ViewBag.Message = "Contact form goes here..."
 
             Return View(cvm)
 
@@ -140,10 +139,26 @@ Namespace PersonalWebsite
         ' POST: /ContactSubmit
         <HttpPost>
         <AllowAnonymous>
-        Public Function ContactSubmit(name As String, email As String, message As String) As ActionResult
+        Function ContactSubmit(name As String, email As String, message As String) As ActionResult
+
+            Dim csv As contactSubmitViewModel = New contactSubmitViewModel()
+
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                csv.styleSheet = db.Style.Where(Function(x) x.Active.Equals(True)).FirstOrDefault()
+
+                csv.userInfo = db.UserInfo.FirstOrDefault()
+
+            End Using
+            '
+            ' POST: /ContactSubmit
+
             ViewBag.Title = "Contact Submitted"
-            ViewBag.Message = "Thank you " + name + ", your email address " + email + " has been forwarded to John Smith with the message: " + message
-            Return View()
+            ViewBag.name = name
+            ViewBag.email = email
+            ViewBag.message = message
+            Return View(csv)
+
         End Function
 
         Function Admin() As ActionResult

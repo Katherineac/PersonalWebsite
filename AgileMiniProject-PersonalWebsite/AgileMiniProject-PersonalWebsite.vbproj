@@ -241,6 +241,7 @@
     <Compile Include="Services\IService.vb" />
     <Compile Include="Services\Service.vb" />
     <Compile Include="Startup.vb" />
+    <Compile Include="ViewModels\contactSubmitViewModel.vb" />
     <Compile Include="ViewModels\AboutViewModel.vb" />
     <Compile Include="ViewModels\AdminViewModel.vb" />
     <Compile Include="ViewModels\ContactViewModel.vb" />

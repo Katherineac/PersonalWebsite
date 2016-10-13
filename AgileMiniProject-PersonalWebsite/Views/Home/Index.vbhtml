@@ -35,12 +35,13 @@ End Code
                 <p>@ViewData("Content6")</p>
             </section>
         </div>
-</div>
-<div class="col-lg-12">
-    <hr />
-    <footer class="footer text-center">
-        <p>&copy; @DateTime.Now.Year - @Model.userInfo.Name</p>
-    </footer>
+    </div>
+    <div class="col-lg-12">
+        <hr />
+        <footer class="footer text-center">
+            <p>&copy; @DateTime.Now.Year - @Model.userInfo.Name</p>
+        </footer>
+    </div>
 </div>
 
 @*Scripts*@

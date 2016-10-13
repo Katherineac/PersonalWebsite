@@ -12,26 +12,29 @@ End Code
 
 <div class="col-lg-12">
     <div class="panel-body col-lg-12">
-        <section class="col-lg-4 sidebar">
-            <p>@Model.userInfo.Name</p>
-            <img class="img-responsive" src="@Url.Action("GetImage", "Admin")" alt="Profile Photo" />
-            <a href="mailto:@Model.userInfo.Email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
-            <a href="@Model.userInfo.Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
-            <a href="@Model.userInfo.Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
-            <a href="@Model.userInfo.LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
-            <a href="@Model.userInfo.GitHub"><i class="fa fa-github-square" aria-hidden="true"></i> Github</a>
-        </section>
-        <div class="col-lg-8" id="maincontent">
-            <h2>@ViewData("Title")</h2>
-            <h3>@ViewData("Message")</h3>
-            <p>@ViewData("Content")</p>
-            <p>@ViewData("Content2")</p>
-            <p>@ViewData("Content3")</p>
-            <p>@ViewData("Content4")</p>
-            <p>@ViewData("Content5")</p>
-            <p>@ViewData("Content6")</p>
+        <div class="col-lg-4 sidebarContainer">
+            <section class="col-lg-12" id="sidebar">
+                <p>@Model.userInfo.Name</p>
+                <p><img class="img-responsive center" src="@Url.Action("GetImage", "Admin")" alt="Profile Photo" /></p>
+                <a href="mailto:@Model.userInfo.Email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
+                <a href="@Model.userInfo.Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
+                <a href="@Model.userInfo.Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+                <a href="@Model.userInfo.LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
+                <a href="@Model.userInfo.GitHub"><i class="fa fa-github-square" aria-hidden="true"></i> Github</a>
+            </section>
         </div>
-    </div>
+        <div class="col-lg-8 maincontentContainer">
+            <section class="col-lg-12" id="maincontent">
+                <h2>@ViewData("Title")</h2>
+                <h3>@ViewData("Message")</h3>
+                <p>@ViewData("Content")</p>
+                <p>@ViewData("Content2")</p>
+                <p>@ViewData("Content3")</p>
+                <p>@ViewData("Content4")</p>
+                <p>@ViewData("Content5")</p>
+                <p>@ViewData("Content6")</p>
+            </section>
+        </div>
 </div>
 <div class="col-lg-12">
     <hr />

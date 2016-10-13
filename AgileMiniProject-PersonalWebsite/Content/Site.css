@@ -28,8 +28,10 @@
 }
 
 img.center {
+
     display: block;
     margin: 0 auto;
+    align: middle;
 }
 
 .success {
@@ -40,6 +42,21 @@ img.center {
 .error {
 
     color: red;
+}
+
+.sidebarContainer {
+
+    padding: 10px;
+}
+
+.sidebar {
+
+    padding-left: 10px;
+}
+
+.maincontentContainer {
+
+    padding: 10px;
 }
 
 

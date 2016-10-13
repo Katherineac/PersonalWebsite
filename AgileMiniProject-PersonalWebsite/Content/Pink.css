@@ -41,10 +41,9 @@ textarea {
     margin-right: 25px;
 }
 
-.sidebar  {
+#sidebar  {
 
     border: 2px solid #d42121;
-    float: left;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
     box-shadow: 0 1px 4px #9a0000,
@@ -52,14 +51,14 @@ textarea {
     background-color: #ff6262;
 }
 
-.sidebar a {
+#sidebar a {
 
     display: block;
     color: #000;
     text-decoration: none;
 }
 
-.sidebar a:hover {
+#sidebar a:hover {
 
     color: #470000;
     font-size: 30px;
@@ -68,8 +67,6 @@ textarea {
 #maincontent {
 
     border: 2px solid #d42121;
-    position: relative;
-    left: 10px;
     font-size: 20px;
     box-shadow: 0 1px 4px #9a0000,
         1px 2px 4px #963030;

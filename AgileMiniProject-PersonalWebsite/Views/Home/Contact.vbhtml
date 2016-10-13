@@ -12,34 +12,38 @@ End Code
 
 <div class="col-lg-12">
     <div class="panel-body col-lg-12">
-        <section class="col-lg-4 sidebar">
-            <p>@Model.userInfo.Name</p>
-            <img class="img-responsive" src="@Url.Action("GetImage", "Admin")" alt="Profile Photo" />
-            <a href="mailto:@Model.userInfo.Email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
-            <a href="@Model.userInfo.Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
-            <a href="@Model.userInfo.Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
-            <a href="@Model.userInfo.LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
-            <a href="@Model.userInfo.GitHub"><i class="fa fa-github-square" aria-hidden="true"></i> Github</a>
-        </section>
-        <div class="col-lg-8" id="maincontent">
-            <h2>@ViewData("Title")</h2>
-            <h3>@ViewData("Message")</h3>
-            <form id="contact_form" action="ContactSubmit" method="POST" enctype="multipart/form-data">
-                <div class="row">
-                    <label for="name">Your name:</label><br />
-                    <input id="name" class="input" name="name" type="text" value="" size="30" required><br />
-                </div>
-                <div class="row">
-                    <label for="email">Your email:</label><br />
-                    <input id="email" class="input" name="email" type="email" value="" size="30" required><br />
-                </div>
-                <div class="row">
-                    <label for="message">Your message:</label><br />
-                    <textarea id="message" class="input" name="message" rows="7" cols="30" required></textarea><br />
-                </div>
-                <input id="submit_button" type="submit" value="Send email" />
-            </form>
-            <br />
+        <div class="col-lg-4 sidebarContainer">
+            <section class="col-lg-12" id="sidebar">
+                <p>@Model.userInfo.Name</p>
+                <p><img class="img-responsive center" src="@Url.Action("GetImage", "Admin")" alt="Profile Photo" /></p>
+                <a href="mailto:@Model.userInfo.Email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
+                <a href="@Model.userInfo.Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
+                <a href="@Model.userInfo.Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+                <a href="@Model.userInfo.LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
+                <a href="@Model.userInfo.GitHub"><i class="fa fa-github-square" aria-hidden="true"></i> Github</a>
+            </section>
+        </div>
+        <div class="col-lg-8 maincontentContainer">
+            <div class="col-lg-12" id="maincontent">
+                <h2>@ViewData("Title")</h2>
+                <h3>@ViewData("Message")</h3>
+                <form id="contact_form" action="ContactSubmit" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <label for="name">Your name:</label><br />
+                        <input id="name" class="input" name="name" type="text" value="" size="30" required><br />
+                    </div>
+                    <div class="row">
+                        <label for="email">Your email:</label><br />
+                        <input id="email" class="input" name="email" type="email" value="" size="30" required><br />
+                    </div>
+                    <div class="row">
+                        <label for="message">Your message:</label><br />
+                        <textarea id="message" class="input" name="message" rows="7" cols="30" required></textarea><br />
+                    </div>
+                    <input id="submit_button" type="submit" value="Send email" />
+                </form>
+                <br />
+            </div>
         </div>
     </div>
 </div>

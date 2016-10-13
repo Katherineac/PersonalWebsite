@@ -12,53 +12,57 @@ End Code
 
 <div class="col-lg-12">
     <div class="panel-body col-lg-12">   
-        <section class="col-lg-4 sidebar">
-            <p>@Model.userInfo.Name</p>
-            <img class="img-responsive" src="@Url.Action("GetImage", "Admin")" alt="Profile Photo" />
-            <a href="mailto:@Model.userInfo.Email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
-            <a href="@Model.userInfo.Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
-            <a href="@Model.userInfo.Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
-            <a href="@Model.userInfo.LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
-            <a href="@Model.userInfo.GitHub"><i class="fa fa-github-square" aria-hidden="true"></i> Github</a>
-        </section>
-        <div class="col-lg-8" id="maincontent">
-            <h2>@ViewData("Title")</h2>
-            <h4>@ViewData("Message")</h4>
-            <br />
-            <div>
-                <h3>@ViewData("Experience")</h3>
-                <ul>
-                    @For Each experience In Model.experience
-                        @<li>@experience.CompanyName @experience.CompanyCity, @experience.CompanyState - @experience.CompanyPosition @experience.CompanyStartDate - @experience.CompanyEndDate</li>
-                    Next
-                </ul>
-            </div>
-            <br />
-            <div>
-                <h3>@ViewData("Education")</h3>
-                <ul>
-                    @For Each education In Model.education
-                        @<li>@education.SchoolName @education.SchoolCity, @education.SchoolState - @education.DegreeEarned - @education.DegreeYear</li>
-                    Next
-                </ul>
-            </div>
-            <br />
-            <div>
-               <h3>@ViewData("Skills")</h3>
-                <ul>
-                    @For Each skill In Model.skill
-                        @<li>@skill.SkillType - @skill.SkillName</li>
-                    Next
-                </ul>
-            </div>
-            <br />
-            <div>
-                <h3>@ViewData("VolunteerExperience")</h3>
-                <ul>
-                    @For Each volunteer In Model.volunteer
-                        @<li>@volunteer.OrganizationName @volunteer.OrganizationCity, @volunteer.OrganizationState - @volunteer.StartDate - @volunteer.EndDate</li>
-                    Next
-                </ul>
+        <div class="col-lg-4 sidebarContainer">
+            <section class="col-lg-12" id="sidebar">
+                <p>@Model.userInfo.Name</p>
+                <p><img class="img-responsive center" src="@Url.Action("GetImage", "Admin")" alt="Profile Photo" /></p>
+                <a href="mailto:@Model.userInfo.Email"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
+                <a href="@Model.userInfo.Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
+                <a href="@Model.userInfo.Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+                <a href="@Model.userInfo.LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a>
+                <a href="@Model.userInfo.GitHub"><i class="fa fa-github-square" aria-hidden="true"></i> Github</a>
+            </section>
+        </div>
+        <div class="col-lg-8 maincontentContainer">
+            <div class="col-lg-12" id="maincontent">
+                <h2>@ViewData("Title")</h2>
+                <h4>@ViewData("Message")</h4>
+                <br />
+                <div>
+                    <h3>@ViewData("Experience")</h3>
+                    <ul>
+                        @For Each experience In Model.experience
+                    @<li>@experience.CompanyName @experience.CompanyCity, @experience.CompanyState - @experience.CompanyPosition @experience.CompanyStartDate - @experience.CompanyEndDate</li>
+                        Next
+                    </ul>
+                </div>
+                <br />
+                <div>
+                    <h3>@ViewData("Education")</h3>
+                    <ul>
+                        @For Each education In Model.education
+                    @<li>@education.SchoolName @education.SchoolCity, @education.SchoolState - @education.DegreeEarned - @education.DegreeYear</li>
+                        Next
+                    </ul>
+                </div>
+                <br />
+                <div>
+                    <h3>@ViewData("Skills")</h3>
+                    <ul>
+                        @For Each skill In Model.skill
+                    @<li>@skill.SkillType - @skill.SkillName</li>
+                        Next
+                    </ul>
+                </div>
+                <br />
+                <div>
+                    <h3>@ViewData("VolunteerExperience")</h3>
+                    <ul>
+                        @For Each volunteer In Model.volunteer
+                    @<li>@volunteer.OrganizationName @volunteer.OrganizationCity, @volunteer.OrganizationState - @volunteer.StartDate - @volunteer.EndDate</li>
+                        Next
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

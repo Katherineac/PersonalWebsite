@@ -177,3 +177,4 @@ C:\Users\lokko\PersonalWebsite\AgileMiniProject-PersonalWebsite\obj\Debug\AgileM
 C:\Users\lokko\PersonalWebsite\AgileMiniProject-PersonalWebsite\obj\Debug\AgileMiniProject-PersonalWebsite.dll
 C:\Users\lokko\PersonalWebsite\AgileMiniProject-PersonalWebsite\obj\Debug\AgileMiniProject-PersonalWebsite.xml
 C:\Users\lokko\PersonalWebsite\AgileMiniProject-PersonalWebsite\obj\Debug\AgileMiniProject-PersonalWebsite.pdb
+C:\Users\lokko\PersonalWebsite\AgileMiniProject-PersonalWebsite\obj\Debug\AgileMiniProject-PersonalWebsite.vbprojResolveAssemblyReference.cache

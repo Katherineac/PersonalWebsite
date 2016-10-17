@@ -217,6 +217,19 @@ Namespace PersonalWebsite
         <HttpPost()>
         Function UpdateUserInfo(ByVal form As UserInfo) As ActionResult
 
+            ' Check if email is valid
+            ' RFC 5322 Official Standard for email validation
+            Dim emailPattern As New Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")
+            If (String.IsNullOrEmpty(form.Email) Or (Not emailPattern.IsMatch(form.Email))) Then
+                Return RedirectToAction("Admin")
+            End If
+
+            ' Check if name is valid
+            ' Checking that name is not empty
+            If (String.IsNullOrEmpty(form.Name)) Then
+                Return RedirectToAction("Admin")
+            End If
+
             ' Get DB Context
             Using db As ApplicationDbContext = New ApplicationDbContext
 

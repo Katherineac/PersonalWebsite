@@ -110,7 +110,7 @@ End Functions
                      <div Class="form-group">
                          <label for="Name" class="col-lg-3 control-label">Name:</label>
                          <div Class="col-md-6">
-                             <input type="text" class="form-control" name="Name" id="Name" value="@Model.userInfo.Name">
+                             <input type="text" class="form-control" name="Name" id="Name" value="@Model.userInfo.Name" required>
                          </div>
                      </div>
                      <div Class="form-group">
@@ -134,13 +134,13 @@ End Functions
                      <div Class="form-group">
                          <label for="Zip" class="col-lg-3 control-label">Zip Code:</label>
                          <div Class="col-md-6">
-                             <input type="text" class="form-control" name="Zip" id="Zip" value="@Model.userInfo.Zip">
+                             <input type="number" class="form-control" name="Zip" id="Zip" value="@Model.userInfo.Zip">
                          </div>
                      </div>
                      <div Class="form-group">
                          <label for="Phone" class="col-lg-3 control-label">Phone:</label>
                          <div Class="col-md-6">
-                             <input type="text" class="form-control" name="Phone" id="Phone" value="@Model.userInfo.Phone">
+                             <input type="tel" class="form-control" name="Phone" id="Phone" value="@Model.userInfo.Phone">
                          </div>
                      </div>
                  </div>
@@ -148,31 +148,31 @@ End Functions
                      <div Class="form-group">
                          <label for="Email" class="col-lg-3 control-label">Email:</label>
                          <div Class="col-md-6">
-                             <input type="text" class="form-control" name="Email" id="Email" value="@Model.userInfo.Email">
+                             <input type="email" class="form-control" name="Email" id="Email" value="@Model.userInfo.Email" required>
                          </div>
                      </div>
                      <div Class="form-group">
                          <label for="Github" class="col-lg-3 control-label">Github:</label>
                          <div Class="col-md-6">
-                             <input type="text" class="form-control" name="Github" id="Github" value="@Model.userInfo.GitHub">
+                             <input type="url" class="form-control" name="Github" id="Github" value="@Model.userInfo.GitHub">
                          </div>
                      </div>
                      <div Class="form-group">
                          <label for="Twitter" class="col-lg-3 control-label">Twitter:</label>
                          <div Class="col-md-6">
-                             <input type="text" class="form-control" name="Twitter" id="Twitter" value="@Model.userInfo.Twitter">
+                             <input type="url" class="form-control" name="Twitter" id="Twitter" value="@Model.userInfo.Twitter">
                          </div>
                      </div>
                      <div Class="form-group">
                          <label for="Facebook" class="col-lg-3 control-label">Facebook:</label>
                          <div Class="col-md-6">
-                             <input type="text" class="form-control" name="Facebook" id="Facebook" value="@Model.userInfo.Facebook">
+                             <input type="url" class="form-control" name="Facebook" id="Facebook" value="@Model.userInfo.Facebook">
                          </div>
                      </div>
                      <div Class="form-group">
                          <label for="LinkedIn" class="col-lg-3 control-label">LinkedIn:</label>
                          <div Class="col-md-6">
-                             <input type="text" class="form-control" name="LinkedIn" id="LinkedIn" value="@Model.userInfo.LinkedIn">
+                             <input type="url" class="form-control" name="LinkedIn" id="LinkedIn" value="@Model.userInfo.LinkedIn">
                          </div>
                      </div>
                  </div>

@@ -85,18 +85,6 @@ Namespace PersonalWebsite
 
         End Sub
 
-        <TestMethod()> Public Sub GetStylesheet()
-            Dim avm As AboutViewModel = New AboutViewModel
-            Using db As ApplicationDbContext = New ApplicationDbContext
-                Dim result As String = avm.styleSheet.StyleSheetName
-                Assert.IsNotNull(result)
-
-                ' StringAssert.Contains(result, "Light Purple")
-
-            End Using
-
-        End Sub
-
 
 
     End Class

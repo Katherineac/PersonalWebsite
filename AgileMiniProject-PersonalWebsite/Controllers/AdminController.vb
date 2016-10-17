@@ -76,7 +76,7 @@ Namespace PersonalWebsite
                     If upload.ContentLength > 0 Then
 
                         ' Make sure upload is png or jpg
-                        If upload.FileName.Contains("png") Or upload.FileName.Contains("jpg") Then
+                        If CheckFileTypeIsImage(upload.FileName) Then
 
                             ' Declare new Photo
                             Dim avatar = New Photo()
@@ -127,10 +127,10 @@ Namespace PersonalWebsite
                         Else
                             ' Create Error message if upload is the wrong format
                             TempData("error") = "Photo must be .png or .jpg."
-                        End If
-                    Else
-                        ' Create Error message if upload filesize is 0
-                        TempData("error") = "Uploaded file contained no data."
+                            End If
+                        Else
+                            ' Create Error message if upload filesize is 0
+                            TempData("error") = "Uploaded file contained no data."
                     End If
                 Else
                     ' Create Error message if upload is null
@@ -372,6 +372,18 @@ Namespace PersonalWebsite
 
         End Function
 #End Region
+
+        Function CheckFileTypeIsImage(ByRef FileName As String) As Boolean
+            Dim indexAfterLastPeriod As Integer = FileName.LastIndexOf(".") + 1
+            ' No valid index was found
+            If indexAfterLastPeriod <= 0 Then
+                Return False
+            End If
+
+            ' The remaining piece of the string is checked
+            Dim fileType As String = FileName.Substring(indexAfterLastPeriod, FileName.Length - indexAfterLastPeriod).ToLower()
+            Return fileType.Equals("png") Or fileType.Equals("jpg")
+        End Function
 
     End Class
 

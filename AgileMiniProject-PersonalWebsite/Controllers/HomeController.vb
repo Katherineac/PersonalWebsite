@@ -141,10 +141,36 @@ Namespace PersonalWebsite
         <HttpPost>
         <AllowAnonymous>
         Public Function ContactSubmit(name As String, email As String, message As String) As ActionResult
+
             ViewBag.Title = "Contact Submitted"
+
+            ' Check if email is valid
+            ' RFC 5322 Official Standard for email validation
+            Dim emailPattern As New Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$")
+            If (String.IsNullOrEmpty(email) Or (Not emailPattern.IsMatch(email))) Then
+
+                ViewBag.Message = "Sorry but you entered an invalid email address, please try again!"
+                Return View()
+            End If
+
+            ' Check if name is valid
+            ' Checking that name is not empty
+            If (String.IsNullOrEmpty(name)) Then
+                ViewBag.Message = "Please enter in your name!"
+                Return View()
+            End If
+
+            ' Check if message is valid by making sure it isn't null or empty
+            If (String.IsNullOrEmpty(message)) Then
+                ViewBag.Message = "Please enter in a message!"
+                Return View()
+            End If
+
             ViewBag.Message = "Thank you " + name + ", your email address " + email + " has been forwarded to John Smith with the message: " + message
             Return View()
         End Function
+
+
 
         Function Admin() As ActionResult
 

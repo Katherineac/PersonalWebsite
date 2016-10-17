@@ -45,6 +45,46 @@ Namespace PersonalWebsite
 
         End Sub
 
+        <TestMethod()> Public Sub ContactSubmitInvalidEmail()
+            ' Arrange
+            Dim controller As New HomeController()
+
+            ' Act: Invalid Email
+            Dim postResult As ViewResult = DirectCast(controller.ContactSubmit("testName", "test@test.", "testMessage"), ViewResult)
+
+            ' Assert
+            Assert.AreEqual(postResult.ViewBag.Message, "Sorry but you entered an invalid email address, please try again!")
+
+
+        End Sub
+
+
+        <TestMethod()> Public Sub ContactSubmitInvalidName()
+            ' Arrange
+            Dim controller As New HomeController()
+
+            ' Act: Invalid Name
+            Dim postResult As ViewResult = DirectCast(controller.ContactSubmit("", "test@test.com", "testMessage"), ViewResult)
+
+            ' Assert
+            Assert.AreEqual(postResult.ViewBag.Message, "Please enter in your name!")
+
+
+        End Sub
+
+        <TestMethod()> Public Sub ContactSubmitInvalidMessage()
+            ' Arrange
+            Dim controller As New HomeController()
+
+            ' Act: Invalid Message
+            Dim postResult As ViewResult = DirectCast(controller.ContactSubmit("test", "test@test.com", ""), ViewResult)
+
+            ' Assert
+            Assert.AreEqual(postResult.ViewBag.Message, "Please enter in a message!")
+
+
+        End Sub
+
         <TestMethod()> Public Sub GetStylesheet()
             Dim avm As AboutViewModel = New AboutViewModel
             Using db As ApplicationDbContext = New ApplicationDbContext

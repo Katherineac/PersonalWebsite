@@ -87,6 +87,30 @@ Namespace PersonalWebsite
             Assert.IsNotNull(result)
         End Sub
 
+        ' Check if the function to verify file types is working for correctly named files
+        <TestMethod()> Public Sub FileTypeCorrectValidation()
+            ' Arrange
+            Dim controller As New AdminController()
+
+            ' Act: Valid File Extensions
+            Dim result As Boolean = controller.CheckFileTypeIsImage("test.png")
+
+            ' Assert
+            Assert.IsTrue(result)
+        End Sub
+
+        ' Check if the function to verify file types is working for incorrectly named files
+        <TestMethod()> Public Sub FileTypeIncorrectValidation()
+            ' Arrange
+            Dim controller As New AdminController()
+
+            ' Act: Invalid File Extension
+            Dim result As Boolean = controller.CheckFileTypeIsImage("test.tiff")
+
+            ' Assert
+            Assert.IsFalse(result)
+        End Sub
+
     End Class
 
 End Namespace

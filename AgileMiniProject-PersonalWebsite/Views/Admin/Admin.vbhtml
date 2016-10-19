@@ -1,13 +1,11 @@
-﻿@imports  GridMVC.html
-@ModelType AdminViewModel
+﻿@ModelType AdminViewModel
 @*
     Agile Mini Project - Personal Website
     Agile Programming
     Fall 2016
     Katie Cater, Lucas Lokken, Austing Prueher, Pheng Vang
 *@
-<link href="~/Content/Gridmvc.css" rel="stylesheet" />
-<script src="~/Scripts/gridmvc.js"></script>
+
 @Code
 
 End Code
@@ -186,8 +184,254 @@ End Functions
             </div>
         </div>
     </div>
-
 End Using
+
+<div Class="panel panel-default form-horizontal">
+    <div Class="col-md-12" id="Experience">
+        <h3>Experience</h3>
+    </div>
+    <div class="panel-body">
+        <div id="ExperienceGroup" hidden>
+            <table id="ExperienceTable">
+                <tr>
+                    <th>Company Name</th>
+                    <th>Company City</th>
+                    <th>Company State</th>
+                    <th>Company Position</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+                @For Each experience In Model.experiences
+
+                    @Using (Html.BeginForm("DeleteExperience", "Admin", FormMethod.Post))
+
+                        @Html.AntiForgeryToken()
+                        @<tr>
+                            <input type="hidden" name="ID" value="@experience.ID" Class="btn btn-default" />
+                            <td>@experience.CompanyName</td>
+                            <td>@experience.CompanyCity</td>
+                            <td>@experience.CompanyState</td>
+                            <td>@experience.CompanyPosition</td>
+                            <td>@experience.CompanyStartDate</td>
+                            <td>@experience.CompanyEndDate</td>
+                            <td><input type="submit" name="DeleteExperience" value="Delete" Class="btn btn-default" /></td>
+                        </tr>
+                    End Using
+                Next
+            </table>
+            @Using (Html.BeginForm("AddExperience", "Admin", FormMethod.Post))
+                @Html.AntiForgeryToken()
+                @<div Class="col-lg-6">
+                    <div Class="form-group">
+                        <hr />
+                        <h3>Add Experience</h3>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="CompanyName" class="col-lg-4 control-label">Company Name:</Label>
+                        <input type="text" Class="form-control" name="CompanyName" id="CompanyName" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="CompanyCity" class="col-lg-4 control-label">Company City:</Label>
+                        <input type="text" Class="form-control" name="CompanyCity" id="CompanyCity" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="CompanyState" class="col-lg-4 control-label">Company State:</Label>
+                        <input type="text" Class="form-control" name="CompanyState" id="CompanyState" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="CompanyPosition" class="col-lg-4 control-label">Company Position:</Label>
+                        <input type="text" Class="form-control" name="CompanyPosition" id="CompanyPosition" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="CompanyStartDate" class="col-lg-4 control-label">Start Date:</Label>
+                        <input type="text" Class="form-control" name="CompanyStartDate" id="CompanyStartDate" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="CompanyEndDate" class="col-lg-4 control-label">End Date:</Label>
+                        <input type="text" Class="form-control" name="CompanyEndDate" id="CompanyEndDate" value="" required>
+                    </div>>
+                    <div Class="col-lg-12 ">
+                        <input type="submit" name="AddExperience" value="Add Experience" Class="center-block btn btn-default" />
+                    </div>
+                </div>
+            End Using
+        </div>
+    </div>
+</div>
+
+<div Class="panel panel-default form-horizontal">
+    <div Class="col-md-12" id="Education">
+        <h3>Education</h3>
+    </div>
+    <div class="panel-body">
+        <div id="EducationGroup" hidden>
+            <table id="EducationTable">
+                <tr>
+                    <th>School Name</th>
+                    <th>School City</th>
+                    <th>School State</th>
+                    <th>Degree Earned</th>
+                    <th>Degree Year</th>
+                    <th>Delete</th>
+                </tr>
+                @For Each education In Model.educations
+
+                    @Using (Html.BeginForm("DeleteEducation", "Admin", FormMethod.Post))
+
+                        @Html.AntiForgeryToken()
+                        @<tr>
+                            <input type="hidden" name="ID" value="@education.ID" Class="btn btn-default" />
+                            <td>@education.SchoolName</td>
+                            <td>@education.SchoolCity</td>
+                            <td>@education.SchoolState</td>
+                            <td>@education.DegreeEarned</td>
+                            <td>@education.DegreeYear</td>
+                            <td><input type="submit" name="DeleteEducation" value="Delete" Class="btn btn-default" /></td>
+                        </tr>
+                    End Using
+                Next
+            </table>
+            @Using (Html.BeginForm("AddEducation", "Admin", FormMethod.Post))
+                @Html.AntiForgeryToken()
+                @<div Class="col-lg-6">
+                    <div Class="form-group">
+                        <hr />
+                        <h3>Add Education</h3>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="SchoolName" class="col-lg-4 control-label">School Name:</Label>
+                        <input type="text" Class="form-control" name="SchoolName" id="SchoolName" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="SchoolCity" class="col-lg-4 control-label">School City:</Label>
+                        <input type="text" Class="form-control" name="SchoolCity" id="SchoolCity" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="SchoolState" class="col-lg-4 control-label">School State:</Label>
+                        <input type="text" Class="form-control" name="SchoolState" id="SchoolState" value="" required>
+                    </div>
+                     <div Class="form-group">
+                         <Label for="DegreeEarned" class="col-lg-4 control-label">Degree Earned:</Label>
+                         <input type="text" Class="form-control" name="DegreeEarned" id="DegreeEarned" value="" required>
+                     </div>
+                     <div Class="form-group">
+                         <Label for="DegreeYear" class="col-lg-4 control-label">Degree Year:</Label>
+                         <input type="text" Class="form-control" name="DegreeYear" id="DegreeYear" value="" required>
+                     </div>
+                    <div Class="col-lg-12 ">
+                        <input type="submit" name="AddEducation" value="Add Education" Class="center-block btn btn-default" />
+                    </div>
+                </div>
+            End Using    
+        </div>
+    </div>
+</div>
+
+<div Class="panel panel-default form-horizontal">
+    <div Class="col-md-12" id="Skills">
+        <h3>Skills</h3>
+    </div>
+    <div class="panel-body">
+        <div id="SkillsGroup" hidden>
+            <table id="SkillsTable">
+                <tr>
+                    <th>Skill Type</th>
+                    <th>Skill Name</th>
+                    <th>Delete</th>
+                </tr>
+                @For Each skill In Model.skills
+
+                    @Using (Html.BeginForm("DeleteSkill", "Admin", FormMethod.Post))
+
+                        @Html.AntiForgeryToken()
+                        @<tr>
+                            <input type="hidden" name="ID" value="@skill.ID" Class="btn btn-default" />
+                            <td>@skill.SkillType</td>
+                            <td>@skill.SkillName</td>
+                            <td><input type="submit" name="DeleteSkill" value="Delete" Class="btn btn-default" /></td>
+                        </tr>
+                    End Using
+                Next
+            </table>
+            @Using (Html.BeginForm("AddSkill", "Admin", FormMethod.Post))
+                @Html.AntiForgeryToken()
+                @<div Class="col-lg-6">
+                    <div Class="form-group">
+                        <hr />
+                        <h3>Add Skill</h3>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="SkillType" class="col-lg-4 control-label">Skill Type:</Label>
+                        <input type="text" Class="form-control" name="SkillType" id="SkillType" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="SkillName" class="col-lg-4 control-label">Skill Name:</Label>
+                        <input type="text" Class="form-control" name="SkillName" id="SkillName" value="" required>
+                    </div>
+                    <div Class="col-lg-12 ">
+                        <input type="submit" name="AddSkill" value="Add Skill" Class="center-block btn btn-default" />
+                    </div>
+                </div>
+            End Using
+        </div>
+    </div>
+</div>
+
+<div Class="panel panel-default form-horizontal">
+    <div Class="col-md-12" id="Projects">
+        <h3>Projects</h3>
+    </div>
+    <div class="panel-body">
+        <div id="ProjectsGroup" hidden>
+            <table id="ProjectsTable">
+                <tr>
+                    <th>Project Name</th>
+                    <th>Project Description</th>
+                    <th>Project Link</th>
+                    <th>Delete</th>
+                </tr>
+                @For Each project In Model.projects
+
+                    @Using (Html.BeginForm("DeleteProject", "Admin", FormMethod.Post))
+
+                        @Html.AntiForgeryToken()
+                        @<tr>
+                            <input type="hidden" name="ID" value="@project.ID" Class="btn btn-default" />
+                            <td>@project.ProjectName</td>
+                            <td>@project.ProjectDescription</td>
+                            <td>@project.ProjectLink</td>
+                            <td><input type="submit" name="DeleteProject" value="Delete" Class="btn btn-default" /></td>
+                        </tr>
+                    End Using
+                Next
+            </table>         
+            @Using (Html.BeginForm("AddProject", "Admin", FormMethod.Post))
+                @Html.AntiForgeryToken()
+                @<div Class="col-lg-6">
+                     <div Class="form-group">
+                         <hr />
+                        <h3>Add Project</h3>
+                     </div>
+                    <div Class="form-group">
+                        <Label for="ProjectName" class="col-lg-4 control-label">Project Name:</Label>
+                        <input type="text" Class="form-control" name="ProjectName" id="ProjectName" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="ProjectDescription" class="col-lg-4 control-label">Project Description:</Label>
+                        <input type="text" Class="form-control" name="ProjectDescription" id="ProjectDescription" value="" required>
+                    </div>
+                    <div Class="form-group">
+                        <Label for="ProjectLink" class="col-lg-4 control-label">Project Link:</Label>
+                        <input type="text" Class="form-control" name="ProjectLink" id="ProjectLink" value="" required>
+                    </div>
+                    <div Class="col-lg-12 ">
+                        <input type="submit" name="AddProject" value="Add Project" Class="center-block btn btn-default" />
+                    </div>
+                </div>
+            End Using         
+        </div>
+    </div>
+</div>
 
 <div Class="panel panel-default form-horizontal">
     <div Class="col-md-12" id="Styles">
@@ -242,6 +486,26 @@ End Using
     $("#UserInfo").click(function () {
 
         $("#UserInfoGroup").toggle()
+    });
+
+    $("#Experience").click(function () {
+
+        $("#ExperienceGroup").toggle()
+    });
+
+    $("#Education").click(function () {
+
+        $("#EducationGroup").toggle()
+    });
+
+    $("#Skills").click(function () {
+
+        $("#SkillsGroup").toggle()
+    });
+
+    $("#Projects").click(function () {
+
+        $("#ProjectsGroup").toggle()
     });
 
     $("#Styles").click(function () {

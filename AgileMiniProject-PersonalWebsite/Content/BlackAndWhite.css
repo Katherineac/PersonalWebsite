@@ -1,0 +1,97 @@
+﻿/*
+    Agile Mini Project - Personal Website
+    Agile Programming
+    Fall 2016
+    Katie Cater, Lucas Lokken, Austing Prueher, Pheng Vang
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #fff;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+
+    max-width: 280px;
+}
+
+.nav-title {
+
+    color: white;
+    margin-top: 10px;
+    margin-right: 25px;
+}
+
+#sidebar  {
+
+    border: 2px solid #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    box-shadow: 0 1px 4px #000000,
+        1px 2px 4px #7371fc;
+    background-color: #fff;
+}
+
+#sidebar a {
+
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+
+    color: #000000;
+    font-size: 30px;
+}
+
+#maincontent {
+
+    border: 2px solid #000000;
+    font-size: 20px;
+    box-shadow: 0 1px 4px #000000,
+        1px 2px 4px #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+}
+
+#maincontent ul {
+
+    list-style-type: none;
+}
+
+.navbar-inverse {
+
+    background-color: #000000;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    
+    background-color: #808080;    
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    
+    color: #ffffff;
+}

@@ -1,4 +1,52 @@
-﻿#StylesTables tr th {
+﻿#ExperienceTable tr th {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#ExperienceTable tr td {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#SkillsTable tr th {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#SkillsTable tr td {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#ProjectsTable tr th {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#ProjectsTable tr td {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#EducationTable tr th {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#EducationTable tr td {
+
+    padding: 10px;
+    text-align: center;
+}
+
+#StylesTables tr th {
 
     padding: 10px;
     text-align: center;

@@ -16,8 +16,6 @@ Namespace PersonalWebsite
     Public Class HomeController
         Inherits Controller
 
-        Private _service As IService
-
         Public Sub New()
 
         End Sub
@@ -34,8 +32,7 @@ Namespace PersonalWebsite
 
             End Using
 
-            ViewBag.Title = "Index/About"
-            ViewBag.Message = "Index/About info here.."
+            ViewBag.Title = "About Me"
             ViewBag.Content = "This has been designed as a portfolio template."
             ViewBag.Content2 = "This is not a real person."
             ViewBag.Content3 = "My name is John Smithson and I graduated from CVTC in 2016 with an associates in Mobile Development."
@@ -88,7 +85,6 @@ Namespace PersonalWebsite
             End Using
 
             ViewBag.Title = "Resume"
-            ViewBag.Message = "Resume info goes here..."
             ViewBag.Experience = "Experience"
             ViewBag.Education = "Education"
             ViewBag.Skills = "Skills"
@@ -108,10 +104,11 @@ Namespace PersonalWebsite
 
                 pvm.userInfo = db.UserInfo.FirstOrDefault()
 
+                pvm.projects = db.Project.ToList()
+
             End Using
 
             ViewBag.Title = "Projects"
-            ViewBag.Message = "Projects goes here..."
 
             Return View(pvm)
 
@@ -130,7 +127,6 @@ Namespace PersonalWebsite
             End Using
 
             ViewBag.Title = "Contact"
-            ViewBag.Message = "Contact form goes here..."
 
             Return View(cvm)
 
@@ -168,29 +164,6 @@ Namespace PersonalWebsite
 
             ViewBag.Message = "Thank you " + name + ", your email address " + email + " has been forwarded to John Smith with the message: " + message
             Return View()
-        End Function
-
-
-
-        Function Admin() As ActionResult
-
-            Dim avm As AdminViewModel = New AdminViewModel()
-
-            Using db As ApplicationDbContext = New ApplicationDbContext
-
-                avm.styleSheets = db.Style.ToList()
-
-                avm.userInfo = db.UserInfo.FirstOrDefault()
-
-            End Using
-
-            _service = New Service()
-
-            ViewBag.Title = _service.AdminTitleExample()
-            ViewBag.Message = _service.AdminMessageExample()
-
-            Return View(avm)
-
         End Function
 
     End Class

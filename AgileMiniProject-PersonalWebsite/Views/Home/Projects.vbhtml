@@ -27,13 +27,22 @@ End Code
             <div class="col-lg-12" id="maincontent">
                 <h2>@ViewData("Title")</h2>
                 <h3>@ViewData("Message")</h3>
+                <div>
+                <ul>
+                    @For Each project In Model.projects
+                        @<li><h3>@project.ProjectName</h3></li>
+                        @<li>@project.ProjectDescription</li>
+                        @<li><a href="@project.ProjectLink">@project.ProjectLink</a></li>
+                        @<li><br /></li>
+                    Next
+                </ul>
             </div>
         </div>
     </div>
 </div>
-<div class="col-lg-12">
+<div Class="col-lg-12">
     <hr />
-    <footer class="footer text-center">
+    <footer Class="footer text-center">
         <p>&copy; @DateTime.Now.Year - @Model.userInfo.Name</p>
     </footer>
 </div>

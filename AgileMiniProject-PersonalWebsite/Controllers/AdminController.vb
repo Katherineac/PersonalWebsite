@@ -17,9 +17,6 @@ Namespace PersonalWebsite
     Public Class AdminController
         Inherits Controller
 
-        ' Declare IService Property
-        Private _service As IService
-
 #Region "Admin"
         ' ActionResult for Admin Page
         Function Admin() As ActionResult
@@ -39,8 +36,20 @@ Namespace PersonalWebsite
                 ' Get list of all Photos from DB and assign to AdminViewModel
                 adminViewModel.profilePhotos = db.Photo.ToList()
 
-                ' Get User's Info from DB and assign to AdminViewModel
+                ' Get User's Personal Info from DB and assign to AdminViewModel
                 adminViewModel.userInfo = db.UserInfo.FirstOrDefault()
+
+                ' Get User's Experience info from DB and assign to AdminViewModel
+                adminViewModel.experiences = db.Experience.ToList()
+
+                ' Get User's Education info from DB and assign to AdminViewModel
+                adminViewModel.educations = db.Education.ToList()
+
+                ' Get User's Skills info from DB and assign to AdminViewModel
+                adminViewModel.skills = db.Skill.ToList()
+
+                ' Get User's Project info from DB and assign to AdminViewModel
+                adminViewModel.projects = db.Project.ToList()
 
             End Using
 
@@ -255,6 +264,246 @@ Namespace PersonalWebsite
             End Using
 
             ' Redirect to Admin AcionResult and display Admin View
+            Return RedirectToAction("Admin")
+
+        End Function
+#End Region
+
+#Region "Delete Experience"
+        'HttpPost Method for Deleting an Experience
+        <HttpPost()>
+        Function DeleteExperience(ByVal experience As Experience) As ActionResult
+
+            'Get DB Context
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                'Create query to find selected Experience
+                Dim selectedExperienceQuery = From experiences In db.Experience
+                                              Where experiences.ID = experience.ID
+
+                ' Get the selected Experience using query
+                Dim selectedExperience = selectedExperienceQuery.FirstOrDefault()
+
+                ' Remove selected Experience
+                db.Experience.Remove(selectedExperience)
+
+                ' Save Changes to DB
+                db.SaveChanges()
+
+            End Using
+
+            'Redirect back to Admin ActionResult to display page Admin View
+            Return RedirectToAction("Admin")
+
+        End Function
+#End Region
+
+#Region "Add Experience"
+        'HttpPost Method for Deleting an Experience
+        <HttpPost()>
+        Function AddExperience(ByVal form As Experience) As ActionResult
+
+            'Get DB Context
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                ' Create new Experience
+                Dim newExperience As New Experience()
+
+                ' Populate newExperience with form data
+                newExperience.CompanyName = form.CompanyName
+                newExperience.CompanyCity = form.CompanyCity
+                newExperience.CompanyState = form.CompanyState
+                newExperience.CompanyPosition = form.CompanyPosition
+                newExperience.CompanyStartDate = form.CompanyStartDate
+                newExperience.CompanyEndDate = form.CompanyEndDate
+
+                ' Add newExperience to DB 
+                db.Experience.Add(newExperience)
+
+                ' Save Changes to DB
+                db.SaveChanges()
+
+            End Using
+
+            'Redirect back to Admin ActionResult to display page Admin View
+            Return RedirectToAction("Admin")
+
+        End Function
+#End Region
+
+#Region "Delete Education"
+        'HttpPost Method for Deleting an Education
+        <HttpPost()>
+        Function DeleteEducation(ByVal education As Education) As ActionResult
+
+            'Get DB Context
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                'Create query to find selected Education
+                Dim selectedEducationQuery = From educations In db.Education
+                                             Where educations.ID = education.ID
+
+                ' Get the selected Education using query
+                Dim selectedEducation = selectedEducationQuery.FirstOrDefault()
+
+                ' Remove selected Education
+                db.Education.Remove(selectedEducation)
+
+                ' Save Changes to DB
+                db.SaveChanges()
+
+            End Using
+
+            'Redirect back to Admin ActionResult to display page Admin View
+            Return RedirectToAction("Admin")
+
+        End Function
+#End Region
+
+#Region "Add Education"
+        'HttpPost Method for Deleting an Education
+        <HttpPost()>
+        Function AddEducation(ByVal form As Education) As ActionResult
+
+            'Get DB Context
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                ' Create new Education
+                Dim newEducation As New Education()
+
+                ' Populate newEducation with form data
+                newEducation.SchoolName = form.SchoolName
+                newEducation.SchoolCity = form.SchoolCity
+                newEducation.SchoolState = form.SchoolState
+                newEducation.DegreeEarned = form.DegreeEarned
+                newEducation.DegreeYear = form.DegreeYear
+
+                ' Add newEducation to DB 
+                db.Education.Add(newEducation)
+
+                ' Save Changes to DB
+                db.SaveChanges()
+
+            End Using
+
+            'Redirect back to Admin ActionResult to display page Admin View
+            Return RedirectToAction("Admin")
+
+        End Function
+#End Region
+
+#Region "Delete Skill"
+        'HttpPost Method for Deleting an Skill
+        <HttpPost()>
+        Function DeleteSkill(ByVal skill As Skill) As ActionResult
+
+            'Get DB Context
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                'Create query to find selected Skill
+                Dim selectedSkillQuery = From skills In db.Skill
+                                         Where skills.ID = skill.ID
+
+                ' Get the selected Skill using query
+                Dim selectedSkill = selectedSkillQuery.FirstOrDefault()
+
+                ' Remove selected Skill
+                db.Skill.Remove(selectedSkill)
+
+                ' Save Changes to DB
+                db.SaveChanges()
+
+            End Using
+
+            'Redirect back to Admin ActionResult to display page Admin View
+            Return RedirectToAction("Admin")
+
+        End Function
+#End Region
+
+#Region "Add Skill"
+        'HttpPost Method for Deleting an Skill
+        <HttpPost()>
+        Function AddSkill(ByVal form As Skill) As ActionResult
+
+            'Get DB Context
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                ' Create new Skill
+                Dim newSkill As New Skill()
+
+                ' Populate newSkill with form data
+                newSkill.SkillType = form.SkillType
+                newSkill.SkillName = form.SkillName
+
+                ' Add newSkill to DB 
+                db.Skill.Add(newSkill)
+
+                ' Save Changes to DB
+                db.SaveChanges()
+
+            End Using
+
+            'Redirect back to Admin ActionResult to display page Admin View
+            Return RedirectToAction("Admin")
+
+        End Function
+#End Region
+
+#Region "Delete Project"
+        'HttpPost Method for Deleting an Project
+        <HttpPost()>
+        Function DeleteProject(ByVal project As Project) As ActionResult
+
+            'Get DB Context
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                'Create query to find selected Project
+                Dim selectedProjectQuery = From projects In db.Project
+                                           Where projects.ID = project.ID
+
+                ' Get the selected Project using query
+                Dim selectedProject = selectedProjectQuery.FirstOrDefault()
+
+                ' Remove selected Project
+                db.Project.Remove(selectedProject)
+
+                ' Save Changes to DB
+                db.SaveChanges()
+
+            End Using
+
+            'Redirect back to Admin ActionResult to display page Admin View
+            Return RedirectToAction("Admin")
+
+        End Function
+#End Region
+
+#Region "Add Project"
+        'HttpPost Method for Deleting an Project
+        <HttpPost()>
+        Function AddProject(ByVal form As Project) As ActionResult
+
+            'Get DB Context
+            Using db As ApplicationDbContext = New ApplicationDbContext
+
+                ' Create new Project
+                Dim newProject As New Project()
+
+                ' Populate newProject with form data
+                newProject.ProjectName = form.ProjectName
+                newProject.ProjectDescription = form.ProjectDescription
+                newProject.ProjectLink = form.ProjectLink
+
+                ' Add newProject to DB 
+                db.Project.Add(newProject)
+
+                ' Save Changes to DB
+                db.SaveChanges()
+
+            End Using
+
+            'Redirect back to Admin ActionResult to display page Admin View
             Return RedirectToAction("Admin")
 
         End Function

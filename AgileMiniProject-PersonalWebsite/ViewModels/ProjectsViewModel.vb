@@ -6,7 +6,11 @@ Public Class ProjectsViewModel
 
     Public styleSheet As Style
 
+    Public projects As New List(Of Project)
+
     Sub New()
+
+        Me.projects = New List(Of Project)
 
     End Sub
 
